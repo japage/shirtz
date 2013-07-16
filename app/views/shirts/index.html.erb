@@ -1,0 +1,20 @@
+<h1>My Shirts</h1>
+
+<%= form_tag '/shirts', method: "GET" do %>
+  <%= label_tag :query, "Search for:" %>
+  <%= text_field_tag :query %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<br/>
+
+
+<ul>
+	<% @shirts.each do |shirt| %>
+		<l1>
+			<%=image_tag shirt.image, :style => 'width:100px;height:auto;' %>	
+			<h4><%=shirt.name%></h4>
+			<p><%=shirt.description%></p>
+		</li>
+	<% end %>
+</ul>
